@@ -2,26 +2,26 @@ package amirka.u5w2d2.entities;
 
 import java.util.Random;
 
-public class BlogPost {
-    private Long blogId;
+public class Post {
+    private long id;
     private String category;
     private String title;
     private String cover;
     private String content;
     private int readingTime;
 
-    public BlogPost(String category, String title, String content, int readingTime) {
+    public Post(String category, String title, String content) {
         Random rnd = new Random();
-        this.blogId = rnd.nextLong(1, 100000);
+        this.id = rnd.nextInt(1, 100000);
         this.category = category;
         this.title = title;
         this.cover = "https://picsum.photos/200/300";
         this.content = content;
-        this.readingTime = readingTime;
+        this.readingTime = rnd.nextInt(1, 59);
     }
 
-    public Long getBlogId() {
-        return blogId;
+    public Long getId() {
+        return id;
     }
 
     public String getCategory() {
@@ -60,14 +60,10 @@ public class BlogPost {
         return readingTime;
     }
 
-    public void setReadingTime(int readingTime) {
-        this.readingTime = readingTime;
-    }
-
     @Override
     public String toString() {
-        return "Blog{" +
-                "blogId=" + blogId +
+        return "Post{" +
+                "id=" + id +
                 ", category='" + category + '\'' +
                 ", title='" + title + '\'' +
                 ", cover='" + cover + '\'' +

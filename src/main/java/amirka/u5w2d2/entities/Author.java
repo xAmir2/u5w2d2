@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Random;
 
 public class Author {
-    private Long authorId;
+    private long id;
     private String name;
     private String surname;
     private String email;
@@ -13,7 +13,7 @@ public class Author {
 
     public Author(String name, String surname, String email, LocalDate birthDate) {
         Random rnd = new Random();
-        this.authorId = rnd.nextLong(1, 10000);
+        this.id = rnd.nextInt(1, 10000);
         this.name = name;
         this.surname = surname;
         this.email = email;
@@ -21,8 +21,8 @@ public class Author {
         this.avatar = "https://ui-avatars.com/api/?name=" + name + "+" + surname;
     }
 
-    public Long getAuthorId() {
-        return authorId;
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
@@ -64,7 +64,7 @@ public class Author {
     @Override
     public String toString() {
         return "Author{" +
-                "authorId=" + authorId +
+                "authorId=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
